@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+  background: #000000;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {
+  font-size: 35px;
+  color: #ffffff;
+  cursor: pointer;
+}
