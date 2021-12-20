@@ -1,7 +1,13 @@
 import Head from 'next/head';
+import { useState } from 'react'
+import { connect } from "react-redux"
+import { setInfo } from "../redux/actions/main"
 import MainHeader from '../components/main-header';
 
-const Home = (): JSX.Element => {
+const Home = (props): JSX.Element => {
+  const { name, setInfo } = props;
+  const [newName, setName] = useState("");
+
   return (
     <>
       <Head>
@@ -12,8 +18,30 @@ const Home = (): JSX.Element => {
       <div className="container">
         <MainHeader />
       </div>
+
+      <div>
+        <p>Enter a Name {name}:</p>
+        <input 
+          type="text" 
+          value={newName} 
+          onChange={(e) => setName(e.target.value)}>
+
+          </input>
+          <button onClick={() => setInfo(newName)}>
+            Submit
+          </button>
+      </div>
     </>
   )
 };
 
-export default Home;
+
+const mapStateToProps = state => {
+  return { name: state.main.name }
+ }
+ 
+ const mapDispatchToProps = {
+   setInfo
+ }
+ 
+ export default connect(mapStateToProps, mapDispatchToProps)(Home)
