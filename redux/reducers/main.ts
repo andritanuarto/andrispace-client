@@ -1,10 +1,11 @@
-import * as t from "../types";
+import { actionArgs } from "../actions/main";
+import * as types from "../types";
 
 const main = (state = {
     name: "guest",
-}, action) => {
+}, action: actionArgs) => {
   switch(action.type){
-    case t.SET_NAME:
+    case types.SET_NAME:
       return { 
         ...state,
         name: action.payload
