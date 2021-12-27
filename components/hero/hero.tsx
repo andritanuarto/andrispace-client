@@ -4,10 +4,24 @@ import styles from './hero.module.scss';
 
 const Hero = (): JSX.Element => {
   const slides = [
-    'photo-1544511916-0148ccdeb877',
-    'photo-1544572571-ab94fd872ce4',
-    'reserve/bnW1TuTV2YGcoh1HyWNQ_IMG_0207.JPG',
-    'photo-1540206395-68808572332f',
+    {
+      title: 'UTG Academy Website Redesign',
+      subTitle: 'Coders will be the wizard of tomorrow',
+      img: 'photo-1544511916-0148ccdeb877',
+      link: "#"
+    },
+    {
+      title: 'World Revolution App',
+      subTitle: 'Now is the time to find each other and assemble',
+      img: 'photo-1544572571-ab94fd872ce4',
+      link: "#"
+    },
+    {
+      title: 'Strategic Planning Manager',
+      subTitle: 'Get your plans on track',
+      img: 'reserve/bnW1TuTV2YGcoh1HyWNQ_IMG_0207.JPG',
+      link: "#"
+    },
   ];
 
   const [index, set] = useState(0);
@@ -21,8 +35,8 @@ const Hero = (): JSX.Element => {
 
   useEffect(() => {
     const t = setInterval(() => set(state => (state + 1) % slides.length), 4000)
-    return () => clearTimeout(t)
-  }, [])
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className={styles["container"]}>
@@ -31,9 +45,11 @@ const Hero = (): JSX.Element => {
           className={styles.bg}
           style={{
             ...style,
-            backgroundImage: `url(https://images.unsplash.com/${slides[i]}?w=1920&q=80&auto=format&fit=crop)`,
+            backgroundImage: `url(https://images.unsplash.com/${slides[i].img}?w=1920&q=80&auto=format&fit=crop)`,
           }}
-        />
+        >
+          <h1>{slides[i].title}</h1>
+        </animated.div>
       ))}
     </div>
   );

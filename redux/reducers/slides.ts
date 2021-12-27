@@ -1,3 +1,4 @@
+import { actionArgs } from "../actions/main";
 import * as types from "../types";
 
 const slides = (state = {
@@ -5,7 +6,7 @@ const slides = (state = {
   splashIndex: 0,
   heroIndex: 0,
   navigationOpen: false
-}, action) => {
+}, action:actionArgs) => {
   switch(action.type) {
     default:
       return {...state};

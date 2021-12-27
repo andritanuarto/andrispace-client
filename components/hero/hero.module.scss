@@ -5,7 +5,9 @@
 }
 
 .bg {
+  color: #ffffff;
   position: absolute;
+  display: flex;
   top: 0;
   left: 0;
   width: 100vw;
@@ -13,4 +15,9 @@
   background-size: cover;
   background-position: center;
   will-change: opacity;
+  align-items: center;
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+  }
 }
