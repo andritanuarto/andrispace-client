@@ -1,13 +1,15 @@
+import { memo } from 'react';
 import { cx } from '@emotion/css';
-import styles from './logo.module.scss';
+import React from 'react';
+import logoStyle from './logo.module.scss';
 
 const Logo = () => {
   return (
-    <div className={cx(styles["logo"])}>
+    <div className={cx(logoStyle["logo"])}>
       andri&apos;space
       <span>UI / UX / DEV</span>
     </div>
   );
 };
 
-export default Logo;
+export default memo(Logo);

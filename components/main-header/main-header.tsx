@@ -17,6 +17,7 @@ const MainHeader = (): JSX.Element => {
     <div className={styles.container}>
       <Logo />
       <MenuIcon className={styles.menu} />
+      <button onClick={() => setIsNavigationOpen(!isNavigationOpen)}>adasda</button>
     </div>
   )
 };
