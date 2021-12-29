@@ -45,7 +45,7 @@ const Hero: React.VFC<HeroPropsType> = ({ hero, handleHeroIndex, handleAutoPlay 
               backgroundImage: `url(https://images.unsplash.com/${slides[index].img}?w=1920&q=80&auto=format&fit=crop)`,
             }}
           >
-            <h1>{slides[i].title}</h1>
+            <h1>{slides[index].title}</h1>
           </animated.div>
         ))}
       </div>
