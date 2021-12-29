@@ -4,6 +4,9 @@ import { useTransition, animated } from '@react-spring/web';
 import styles from './hero.module.scss';
 import { SlidesStateType } from '../../redux/reducers/hero';
 import { setHeroIndex, setAutoPlay } from '../../redux/actions/hero';
+import { ThunkDispatch } from 'redux-thunk/es/types';
+import { reducerTypes } from '../../redux/types';
+import { Action } from 'redux';
 
 type HeroPropsType = {
   hero: SlidesStateType;
@@ -34,12 +37,12 @@ const Hero: React.VFC<HeroPropsType> = ({ hero, handleHeroIndex, handleAutoPlay 
   return (
     <>
       <div className={styles["container"]}>
-        {transitions((style, i) => (
+        {transitions((style, index) => (
           <animated.div
             className={styles.bg}
             style={{
               ...style,
-              backgroundImage: `url(https://images.unsplash.com/${slides[i].img}?w=1920&q=80&auto=format&fit=crop)`,
+              backgroundImage: `url(https://images.unsplash.com/${slides[index].img}?w=1920&q=80&auto=format&fit=crop)`,
             }}
           >
             <h1>{slides[i].title}</h1>
@@ -67,7 +70,7 @@ const Hero: React.VFC<HeroPropsType> = ({ hero, handleHeroIndex, handleAutoPlay 
   );
 };
 
-export const mapDispatchToProps = (dispatch:any) => {
+export const mapDispatchToProps = (dispatch: ThunkDispatch<SlidesStateType, {}, Action<reducerTypes>>) => {
   return {
     handleHeroIndex: (heroIndex: number) => {
       dispatch(setHeroIndex(heroIndex));
