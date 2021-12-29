@@ -1,4 +1,5 @@
 import { actionArgs } from "../actions/main";
+import { reducerTypes } from "../types";
 
 export type Slide = {
   title: string,
@@ -44,8 +45,10 @@ const hero = (state: SlidesStateType = {
   navigationOpen: false
 }, action:actionArgs) => {
   switch(action.type) {
-    case("SET_HERO_INDEX"):
+    case(reducerTypes.SET_HERO_INDEX):
       return {...state, heroIndex: action.payload}
+    case(reducerTypes.SET_HERO_AUTOPLAY):
+      return {...state, autoPlay: action.payload}
     default:
       return {...state};
   }

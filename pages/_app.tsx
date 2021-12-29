@@ -6,10 +6,7 @@ import { useRouter } from 'next/router'
 
 const MyApp = ({ Component, pageProps}: AppProps) => {
 
-  const router = useRouter();
-
-  console.log(router, 'router');
-
+  // const router = useRouter();
   return (
     <Component {...pageProps} />
   );
