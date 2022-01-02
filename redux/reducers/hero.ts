@@ -5,7 +5,11 @@ export type Slide = {
   title: string,
   subTitle: string,
   img: string,
-  link: string
+  link: string,
+  imgBg: string,
+  imgThumb: string;
+  imgThumbWidth: number;
+  imgThumbHeight: number;
 };
 
 export type SlidesStateType = {
@@ -23,19 +27,31 @@ const hero = (state: SlidesStateType = {
       title: 'UTG Academy Website Redesign',
       subTitle: 'Coders will be the wizard of tomorrow',
       img: 'photo-1544511916-0148ccdeb877',
-      link: "#"
+      link: "#",
+      imgBg: '/utg-bg.jpg',
+      imgThumb: "/utg.png",
+      imgThumbWidth: 720,
+      imgThumbHeight: 453
     },
     {
       title: 'World Revolution App',
       subTitle: 'Now is the time to find each other and assemble',
       img: 'photo-1544572571-ab94fd872ce4',
-      link: "#"
+      link: "#",
+      imgBg: "/adbusters-bg.jpg",
+      imgThumb: "/adbusters.png",
+      imgThumbWidth: 530,
+      imgThumbHeight: 500
     },
     {
       title: 'Strategic Planning Manager',
       subTitle: 'Get your plans on track',
       img: 'reserve/bnW1TuTV2YGcoh1HyWNQ_IMG_0207.JPG',
-      link: "#"
+      link: "#",
+      imgBg: "/envisio-bg.jpg",
+      imgThumb: "/envisio.png",
+      imgThumbWidth: 711.23,
+      imgThumbHeight: 500
     }
   ],
   autoPlay: true,

@@ -5,10 +5,10 @@ import styles from './main-header.module.scss';
 
 const MainHeader = (): JSX.Element => {
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <Logo />
-      <MenuIcon className={styles.menu} />
-    </div>
+      <MenuIcon className={styles.menu} fontSize="large"/>
+    </header>
   )
 };
 

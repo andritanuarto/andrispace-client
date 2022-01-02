@@ -1,8 +1,7 @@
 @keyframes flicker {
   0%,
   70%,
-  85%,
-  95% {
+  85% {
     opacity: 0;
   }
   2%,
@@ -29,17 +28,16 @@
   90% {
     opacity: 0.7;
   }
-  82%,
   100% {
     opacity: 1;
   }
 }
 
 @mixin animation($animationType, $interval, $easingType: ease) {
-  -webkit-animation: $animationType $interval $easingType;
-  -moz-animation: $animationType $interval $easingType;
-  -o-animation: $animationType $interval $easingType;
-  animation: $animationType $interval $easingType;
+  -webkit-animation: $animationType $interval $easingType forwards;
+  -moz-animation: $animationType $interval $easingType forwards;
+  -o-animation: $animationType $interval $easingType forwards;
+  animation: $animationType $interval $easingType forwards;
 }
 
 @mixin animationDelay($interval) {
@@ -54,11 +52,9 @@
   color: #fff;
   display: flex;
   align-items: center;
-  transition: color 0.5s;
   opacity: 0;
   @include animation(flicker, 2s, ease-out);
   @include animationDelay(2s);
-  animation-fill-mode: forwards;
   span {
     position: relative;
     font-family: Heebo, sans-serif;

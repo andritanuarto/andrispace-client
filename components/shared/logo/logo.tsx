@@ -4,6 +4,7 @@ import React from 'react';
 import logoStyle from './logo.module.scss';
 
 const Logo = () => {
+  console.log('rerender');
   return (
     <div className={cx(logoStyle["logo"])}>
       andri&apos;space
