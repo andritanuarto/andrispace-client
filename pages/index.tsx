@@ -2,12 +2,10 @@ import Head from 'next/head';
 import { useState } from 'react'
 import { connect } from "react-redux"
 import { setInfo } from "../redux/actions/main"
-import MainHeader from '../components/main-header';
+import MainHeader from '../components/main-header/main-header';
+import Hero from '../components/hero/hero';
 
-const Home = (props): JSX.Element => {
-  const { name, setInfo } = props;
-  const [newName, setName] = useState("");
-
+const Home = (): JSX.Element => {
   return (
     <>
       <Head>
@@ -16,32 +14,33 @@ const Home = (props): JSX.Element => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainHeader />
-      <div>
+      <Hero />
+      {/* <div>
         <p>Enter a Name {name}:</p>
         <input 
           type="text" 
           value={newName} 
-          onChange={(e) => setName(e.target.value)}>
-
-          </input>
-          <button onClick={() => setInfo(newName)}>
-            Submit
-          </button>
-      </div>
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button onClick={() => setInfo(newName)}>
+          Submit
+        </button>
+      </div> */}
     </>
   )
 };
 
+export default Home;
 
-const mapStateToProps = state => {
-  return {
-    name: state.main.name,
-    slides: state.slides
-  }
- }
+// const mapStateToProps = state => {
+//   return {
+//     name: state.main.name,
+//     slides: state.slides
+//   }
+//  }
  
- const mapDispatchToProps = {
-   setInfo
- }
+//  const mapDispatchToProps = {
+//    setInfo
+//  }
  
- export default connect(mapStateToProps, mapDispatchToProps)(Home)
+//  export default connect(mapStateToProps, mapDispatchToProps)(Home)

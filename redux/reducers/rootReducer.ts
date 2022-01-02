@@ -1,10 +1,8 @@
 import { combineReducers } from "redux"
-import main from "./main";
-import slides from "./slides";
+import hero from "./hero";
 
 const rootReducer = combineReducers({
-  main,
-  slides
-})
+  hero
+});
 
 export default rootReducer;
